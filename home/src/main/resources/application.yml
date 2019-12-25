@@ -1,0 +1,46 @@
+spring:
+  profiles:
+    active: dev #默认加载环境
+---
+spring:
+  profiles: dev #开发环境
+  datasource:
+     driver-class-name: com.mysql.jdbc.Driver
+     url: jdbc:mysql://106.54.31.196:3306/home?useUnicode=true&characterEncoding=utf-8&useSSL=false
+     username: client
+     password: 123456
+  thymeleaf:
+    prefix: classpath:/templates/
+    suffix: .html
+    mode: HTML5
+    encoding: UTF-8
+    cache: false
+  resources:
+    static-locations: classpath:templates/
+  http:
+    encoding: 
+      force: true
+      charset: UTF-8
+      enabled: true
+server:
+  port: 80
+  servlet:
+    context-path: /home
+  tomcat: 
+    uri-encoding: UTF-8
+mybatis:
+  mapper-locations: classpath:mybatis/mapper/*.xml
+  type-aliases-package: cn.tedu.home.pojo
+  config-location: classpath:mybatis/mybatis-config.xml
+pagehelper:
+  helperDialect: mysql
+  reasonable: true
+  supportMethodsArguments: true
+  params: count=countSql   
+---
+spring:
+  profiles: pro #生产环境
+server:
+  port: 80
+  servlet:
+    context-path: /
