@@ -1,0 +1,19 @@
+#L_sign{
+	width: 100%;
+	height: 40px;
+}
+.layui-input-inline{
+	margin-top: 4px;
+}
+.layui-form-switch {
+    margin-top: 4px;
+}
+.layui-form-item .layui-input-inline {
+    width: 45%;
+}
+.layui-form-label{
+	width: 27%;
+}
+.layui-table th {
+    min-width: 20px;
+}
